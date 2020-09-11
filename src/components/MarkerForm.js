@@ -2,7 +2,6 @@ import React from "react";
 import { addMarker, updateUser } from "../actions";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../reducers/user-reducer";
-import { sendMarkerStatus } from "../reducers/markers-reducer";
 import styled from "styled-components";
 import Card from "./Cards/Card";
 import Button from "./Buttons/Button";

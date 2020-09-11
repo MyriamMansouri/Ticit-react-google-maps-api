@@ -1,9 +1,7 @@
 import React from "react";
-import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import UnstyledButton from "./UnstyledButton";
 import { setCenter } from "../../actions";
-import { Crosshair } from "../Icons";
 import { useHistory } from "react-router-dom";
 import { getUserPosition } from "../../reducers/map-reducer";
 
