@@ -110,7 +110,7 @@ const CustomInfobox = ({ marker }) => {
     >
       <SmallCard>
         {imgId && (
-          <Image  style={{backgroundColor:COLORS.lightText}} width="240" height="240" cloudName="hcrafbjaa" publicId={imgId}>
+          <Image  style={{backgroundColor:COLORS.lightText}} width="240" height="240" cloudName="hmaw0pqml" publicId={imgId}>
             <Transformation width="240" height="240" crop="fill" quality="auto:low" />
           </Image>
         )}
