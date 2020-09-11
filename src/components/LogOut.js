@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { resetUser } from "../actions";
 
@@ -7,7 +6,6 @@ import UnstyledButton from "./Buttons/UnstyledButton";
 
 const LogOut = ({ setOpen, children }) => {
   const dispatch = useDispatch();
-  const history = useHistory();
 
   const handleClick = () => {
     fetch("/api/users/logout")
@@ -16,7 +14,7 @@ const LogOut = ({ setOpen, children }) => {
         if (data.status === 200) {
           dispatch(resetUser());
           setOpen(false);
-          history.push("/");
+          window.location.href=("/") // i use that instead of history.push() cause I need to reload the page
         }
       })
       .catch((err) => console.log(err));
