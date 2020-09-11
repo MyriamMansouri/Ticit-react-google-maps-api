@@ -1,5 +1,7 @@
 ## Ticit : a platform to tag and vote all your favorite places
 
+<a href='https://ticit-me.herokuapp.com/'>https://ticit-me.herokuapp.com/</a>
+
 Ticit (a mix between the english "city" and the quebecois "icitte") is a platform where users can share and vote all their favorite places. It was created during Concordia Full Stack Bootcamp 2020. The idea was to create a map fed by users and not by businesses where people could share the places they love, whether it's a beautiful view, a mural or a concert venue.
 
 ## The technology
