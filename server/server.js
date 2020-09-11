@@ -10,6 +10,7 @@ const path = require("path");
 const initializePassport = require("./passport-config");
 const users = require("./routes/users");
 const markers = require("./routes/markers");
+const streamifier = require("streamifier");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 5678;
@@ -25,7 +26,7 @@ mongoose
 mongoose.set("useFindAndModify", false);
 
 cloudinary.config({
-  cloud_name: "hcrafbjaa",
+  cloud_name: "hmaw0pqml",
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
@@ -38,13 +39,25 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(morgan("tiny"));
 app.use(flash());
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-  })
-);
+const sess = {
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {}
+}
+ 
+if (app.get('env') === 'production') {
+  app.set('trust proxy', 1) // trust first proxy
+  sess.cookie.secure = true // serve secure cookies
+}
+ 
+app.use(session(sess))
+
+if (app.get('env') === 'production') {
+  app.set('trust proxy', 1) // trust first proxy
+  sess.cookie.secure = true // serve secure cookies
+}
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use("/", express.static(path.join(__dirname, "../")));
