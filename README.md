@@ -9,6 +9,7 @@ Ticit (a mix between the english "city" and the quebecois "icitte") is a platfor
 <ul>
 <li>App uses the MERN stack (MongoDB, Express.js, React, Node.js). </li>
 <li>Authentication and user sessions are provided by passport local strategy + bcrypt. </li>
+<li>App state management in Redux</li>
 <li>Image upload is multer + cloudinary. </li>
 <li>Map plateform is Google Maps packaged by @react-google-maps/api. </li>
 <li>All the UI was design by me. </li>
